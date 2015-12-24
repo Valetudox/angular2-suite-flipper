@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from 'angular2/core';
 import { FlipperService } from './service';
 
-@Pipe({ name: 'flipperIsOn' })
+@Pipe({ name: 'flipperIsOff' })
 export class FlipperIsOffPipe implements PipeTransform {
 
   constructor(private flipperService: FlipperService) {}
