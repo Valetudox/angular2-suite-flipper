@@ -1,14 +1,14 @@
 import { Injectable, Inject } from 'angular2/core';
-const SuiteFlipper = require('suite-flipper-js');
+let SuiteFlipper = require('suite-flipper-js');
 
 @Injectable()
 export class FlipperService {
 
-  private suiteFlipper: SuiteFlipper = SuiteFlipper.create([]);
+  private suiteFlipper;
 
 
   setFlippers(value): void {
-    this.suiteFlipper = SuiteFlipper.create(value);
+    this.suiteFlipper = new SuiteFlipper(value);
   }
 
 
