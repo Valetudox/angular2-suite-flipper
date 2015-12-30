@@ -11,21 +11,11 @@ npm install --save angular2-suite-flipper
 Setup
 ---------
 
+provide `flippers` in your bootstrap
+
 ```javascript
 
-import { FlipperService } from 'angular2-suite-flipper';
-
-@Component({
-  selector: '<app>',
-  template: `
-    Your main app
-  `
-})
-export class App {
-
-  constructor(flipperService: FlipperService) {
-    flipperService.setFlippers(['dummy', 'test']);
-  }
+provide('flippers', { useValue: ['dummy', 'test'] });
 ```
 
 Usage in template
