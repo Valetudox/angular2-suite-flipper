@@ -9,8 +9,7 @@ describe('Pipes', function() {
   let pipe;
 
   beforeEach(function () {
-    service = new FlipperService();
-    service.setFlippers(['testflipper']);
+    service = new FlipperService(['testflipper']);
   });
 
   describe('Is On Pipe', function() {

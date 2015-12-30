@@ -8,8 +8,7 @@ describe('Flipper Service', function() {
   let service;
 
   beforeEach(function() {
-    service = new FlipperService();
-    service.setFlippers(['testflipper']);
+    service = new FlipperService(['testflipper']);
   });
 
   describe('#isOn', function() {
@@ -34,6 +33,17 @@ describe('Flipper Service', function() {
 
     it('should be true if the given flipper is off', function() {
       expect(service.isOff('otherflipper')).to.be.true;
+    });
+
+  });
+
+  describe('#setFlippers', function() {
+
+    it('should override the original flippers', function() {
+      service.setFlippers(['newflipper']);
+
+      expect(service.isOn('testflipper')).to.be.false;
+      expect(service.isOn('newflipper')).to.be.true;
     });
 
   });
