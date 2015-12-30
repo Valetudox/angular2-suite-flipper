@@ -34,9 +34,7 @@ import { IsOffPipe } from 'angular2-suite-flipper';
     <h1 *ngIf="'dummy' | isOn">Without</h1>
   `
 })
-export class App {
-
-  constructor() {}
+export class App {}
 ```
 
 Usage in Controller
@@ -56,4 +54,5 @@ export class App {
     if (flipperService.isOn('dummy')) console.log(1);
     if (flipperService.isOff('dummy')) console.log(2);
   }
+}
 ```
