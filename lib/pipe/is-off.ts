@@ -1,15 +1,17 @@
-import { Pipe } from 'angular2/core';
-import { FlipperService } from './service';
+import { Pipe } from '@angular/core';
+import { FlipperService } from '../service';
 
 @Pipe({ name: 'flipperIsOff' })
 export class FlipperIsOffPipe {
+
+  private _flipperService: FlipperService;
 
   constructor(flipperService: FlipperService) {
     this._flipperService = flipperService;
   }
 
 
-  transform(name) {
+  transform(name: string): boolean {
     return this._flipperService.isOff(name);
   }
 
