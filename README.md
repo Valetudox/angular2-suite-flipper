@@ -1,21 +1,28 @@
-# Angular2 Suite Flipper
+# Angular Suite Flipper
 
-This is a simple flipper solution for angular2. You should provide the flippers.
+This is a simple flipper solution for angular. You should provide the flippers.
 
 Install
 ---------
 
 ```bash
-npm install --save angular2-suite-flipper
+npm install --save @emartech/angular-suite-flipper
 ```
 Setup
 ---------
 
-provide `flippers` in your bootstrap
-
 ```javascript
+import { FlipperModule } from '@emartech/angular-suite-flipper';
 
-provide('flippers', { useValue: ['dummy', 'test'] });
+@NgModule({
+  imports: [
+    BrowserModule,
+    FlipperModule.create(['dummy', 'test'])
+  ],
+  declarations: [AppComponent],
+  bootstrap:    [AppComponent]
+})
+export class AppModule { }
 ```
 
 Usage in template
@@ -23,12 +30,11 @@ Usage in template
 
 ```javascript
 
-import { IsOnPipe } from 'angular2-suite-flipper';
-import { IsOffPipe } from 'angular2-suite-flipper';
+import { IsOnPipe } from '@emartech/angular-suite-flipper';
+import { IsOffPipe } from '@emartech/angular-suite-flipper';
 
 @Component({
   selector: '<sub-app>',
-  pipes: [IsOnPipe, IsOffPipe],
   template: `
     <h1 *ngIf="'dummy' | isOff">With</h1>
     <h1 *ngIf="'dummy' | isOn">Without</h1>
@@ -42,7 +48,7 @@ Usage in Controller
 
 ```javascript
 
-import { FlipperService } from 'angular2-suite-flipper';
+import { FlipperService } from '@emartech/angular-suite-flipper';
 
 @Component({
   selector: '<sub-app>',
