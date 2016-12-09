@@ -17,11 +17,6 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "typings": "typings install"
   },
-  "release": {
-    "verifyConditions": {
-      "path": "./node_modules/semantic-release/dist/lib/plugin-noop.js"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emartech/angular2-suite-flipper.git"
@@ -46,7 +41,7 @@
     "reflect-metadata": "0.1.8",
     "rimraf": "2.5.2",
     "rxjs": "5.0.0-rc.3",
-    "semantic-release": "6.2.1",
+    "semantic-release": "6.3.2",
     "ts-node": "0.7.0",
     "typescript": "~2.0.3",
     "typings": "^2.0.0",
