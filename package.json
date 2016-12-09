@@ -11,9 +11,11 @@
   "main": "dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "test": "mocha --require core-js/shim --require reflect-metadata --require ts-node/register lib/**/*.spec.ts",
-    "prepublish": "typings install && rimraf dist && tsc",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "build": "rimraf dist && ngc",
+    "test": "mocha --require core-js/shim --require reflect-metadata --require ts-node/register src/**/*.spec.ts",
+    "prepublish": "typings install && npm run build",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "typings": "typings install"
   },
   "release": {
     "verifyConditions": {
@@ -31,7 +33,13 @@
   },
   "homepage": "https://github.com/emartech/angular2-suite-flipper#readme",
   "devDependencies": {
-    "@angular/core": "^2.0.0",
+    "@angular/compiler": "^2.3.0",
+    "@angular/compiler-cli": "^2.3.0",
+    "@angular/core": "^2.3.0",
+    "@angular/platform-server": "^2.3.0",
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.33",
+    "@types/node": "0.0.2",
     "chai": "3.5.0",
     "core-js": "2.4.1",
     "mocha": "2.4.5",
@@ -40,14 +48,11 @@
     "rxjs": "5.0.0-rc.3",
     "semantic-release": "6.2.1",
     "ts-node": "0.7.0",
-    "typescript": "2.0.10",
-    "typings": "2.0.0",
-    "zone.js": "0.6.26"
+    "typescript": "~2.0.3",
+    "typings": "^2.0.0",
+    "zone.js": "^0.7.2"
   },
   "peerDependencies": {
-    "@angular/core": "^2.0.0"
-  },
-  "dependencies": {
-    "suite-flipper-js": "^2.0.1"
+    "@angular/core": "^2.3.0"
   }
 }

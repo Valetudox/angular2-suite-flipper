@@ -1,8 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-export * from './pipe';
-export * from './service';
-import { FlipperIsOffPipe, FlipperIsOnPipe } from './pipe';
-import { FlipperService } from './service';
+import { FlipperIsOffPipe, FlipperIsOnPipe, FlipperService } from './src';
+export * from './src';
 
 @NgModule({
   declarations: [

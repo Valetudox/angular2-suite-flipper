@@ -1,4 +1,13 @@
-*.log
-node_modules/
+**/.DS_Store
+nbproject
+manifest.mf
+build.xml
 dist/
-typings/
+node_modules/*
+npm-debug.log
+*.js
+*.map
+*.d.ts
+*.metadata.json
+bundles
+.DS_Store

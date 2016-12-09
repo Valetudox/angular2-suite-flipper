@@ -1,28 +1,28 @@
 import { Injectable, Inject } from '@angular/core';
-const SuiteFlipper = require('suite-flipper-js');
+import { Flipper } from './flipper';
 
 @Injectable()
 export class FlipperService {
 
-  private _suiteFlipper: any;
+  private _flipper: Flipper;
 
   constructor(@Inject('flippers') flippers: string[]) {
-    this._suiteFlipper = new SuiteFlipper(flippers);
+    this._flipper = new Flipper(flippers);
   }
 
 
   setFlippers(value: string[]) {
-    this._suiteFlipper = new SuiteFlipper(value);
+    this._flipper = new Flipper(value);
   }
 
 
   isOn(flipper: string): boolean {
-    return this._suiteFlipper.isOn(flipper);
+    return this._flipper.isOn(flipper);
   }
 
 
   isOff(flipper: string): boolean {
-    return this._suiteFlipper.isOff(flipper);
+    return this._flipper.isOff(flipper);
   }
 
 }

@@ -1,5 +1,5 @@
-import { FlipperIsOnPipe } from './is-on';
-import { FlipperService } from '../service';
+import { FlipperIsOnPipe } from './is-on.pipe';
+import { FlipperService } from './flipper.service';
 import { expect } from 'chai';
 
 const createPipeForFlippers = ({

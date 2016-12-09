@@ -1,21 +1,36 @@
 {
-    "compilerOptions": {
-        "noImplicitAny": true,
-        "module": "commonjs",
-        "target": "ES5",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "sourceMap": true,
-        "declaration": true,
-        "outDir": "dist/"
-    },
-    "exclude": [
-        "node_modules",
-        "./test/**/*.spec.ts"
+  "compilerOptions": {
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "ES5",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "types": [
+      "node",
+      "mocha",
+      "chai"
     ],
-    "filesGlob": [
-        "./lib/**/*.ts",
-        "!./node_modules/**/*.ts",
-        "typings/index.d.ts"
-    ]
+    "lib": ["es2015", "dom"]
+  },
+  "files": [
+    "index.ts",
+    "angular2-suite-flipper.ts",
+    "src/errors.ts",
+    "src/flipper.service.ts",
+    "src/flipper.ts",
+    "src/index.ts",
+    "src/is-off.pipe.ts",
+    "src/is-on.pipe.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true
+  }
 }

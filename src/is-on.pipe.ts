@@ -1,8 +1,8 @@
 import { Pipe } from '@angular/core';
-import { FlipperService } from '../service';
+import { FlipperService } from './flipper.service';
 
-@Pipe({ name: 'flipperIsOff' })
-export class FlipperIsOffPipe {
+@Pipe({ name: 'flipperIsOn' })
+export class FlipperIsOnPipe {
 
   private _flipperService: FlipperService;
 
@@ -12,7 +12,7 @@ export class FlipperIsOffPipe {
 
 
   transform(name: string): boolean {
-    return this._flipperService.isOff(name);
+    return this._flipperService.isOn(name);
   }
 
 }

@@ -1,4 +1,4 @@
-import { FlipperService } from './';
+import { FlipperService } from './flipper.service';
 import { expect } from 'chai';
 
 describe('Flipper Service', function() {
