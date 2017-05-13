@@ -1,6 +1,8 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, Provider } from '@angular/core';
 import { FlipperIsOffPipe, FlipperIsOnPipe, FlipperService } from './src';
 export * from './src';
+
+export function flippersFactory(): string[] { return []; }
 
 @NgModule({
   declarations: [
@@ -13,12 +15,12 @@ export * from './src';
   ]
 })
 export class FlipperModule {
-  static create(flippers: string[]): ModuleWithProviders {
+  static forRoot(
+    providedFlippers: Provider = { provide: 'flippers', useFactory: flippersFactory }
+  ): ModuleWithProviders {
     return {
       ngModule: FlipperModule,
-      providers: [
-        { provide: FlipperService, useValue: new FlipperService(flippers) }
-      ]
+      providers: [FlipperService]
     };
   }
 }

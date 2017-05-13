@@ -1,3 +1,4 @@
+import { Injectable, Inject } from '@angular/core';
 import { InvalidFlippersError } from './errors';
 
 export type FlipperFromApi = {
@@ -5,11 +6,12 @@ export type FlipperFromApi = {
   id: string;
 };
 
+@Injectable()
 export class Flipper {
 
   private _availableFlippers: string[];
 
-  constructor(avalaibleFlippers: string[] = []) {
+  constructor(@Inject('flippers') avalaibleFlippers: string[] = []) {
     this._availableFlippers = avalaibleFlippers;
     this.isOn = this.isOn.bind(this);
     this.isOff = this.isOff.bind(this);
