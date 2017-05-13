@@ -20,7 +20,7 @@ export class FlipperModule {
   ): ModuleWithProviders {
     return {
       ngModule: FlipperModule,
-      providers: [FlipperService]
+      providers: [FlipperService, providedFlippers]
     };
   }
 }
