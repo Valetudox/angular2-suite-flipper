@@ -1,10 +1,8 @@
-**/.DS_Store
-nbproject
-manifest.mf
-build.xml
 node_modules/*
-npm-debug.log
-.DS_Store
 src/
 index.ts
-angular2-suite-flipper.ts
+*.ngfactory.d.ts
+*.ngfactory.ts
+*.ngfactory.js
+*.ngsummary.json
+.DS_Store
