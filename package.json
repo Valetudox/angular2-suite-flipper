@@ -9,6 +9,7 @@
     "flipper"
   ],
   "main": "dist/index.js",
+  "access": "public",
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && ngc",
