@@ -51,4 +51,14 @@ describe('Flipper Service', function() {
 
   });
 
+  describe('#getFlippers', function() {
+
+    it('should return flippers', function() {
+      const flippers = ['testflipper'];
+      const service = createService({ flippers });
+
+      expect(service.getFlippers()).to.eql(flippers);
+    });
+
+  });
 });
